@@ -48,9 +48,14 @@ doc_words_test <- doc_words_test[is.na(as.numeric(doc_words_test$word)),]
 library(tm)
 doc_dtm <- doc_words %>%
   cast_dtm(ID, word, n)
+# Remove sparse terms
+doc_dtm <- removeSparseTerms(doc_dtm, 0.9)
+
 # Create Document Term Matrix for test
 doc_dtm_test <- doc_words_test %>%
   cast_dtm(ID, word, n)
+# Remove sparse terms
+doc_dtm_test <- removeSparseTerms(doc_dtm_test, 0.9)
 
 ####### Supervised Analysis with naive Bayes (using just training data to measure accuracy)
 set.seed(1234)
@@ -109,4 +114,4 @@ colnames(pred_class_prob) <- c("ID", "class1", "class2", "class3", "class4", "cl
 save(classifier, pred_class_prob, file = "naiveBayes.RData")
 
 # Write submission file
-write.csv(pred_class_prob, "Submission_File.csv")
+write.csv(pred_class_prob, "Submission_File.csv", row.names = FALSE)
