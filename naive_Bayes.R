@@ -11,7 +11,7 @@ test_variants <- read.csv("data/test_variants")
 
 # Create training text tibble
 g <- do.call(rbind,strsplit(readLines('data/training_text'),"||",fixed=T))
-library(tidyverse)
+library(dplyr)
 training_text <- data_frame(ID = g[-1,1], Text = g[-1,2])
 training_text$ID <- as.numeric(training_text$ID)
 training_text <- left_join(training_text, training_variants)
