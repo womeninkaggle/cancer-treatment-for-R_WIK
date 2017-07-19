@@ -6,6 +6,17 @@ than running in RStudio.
 ```
 Rscript naiveBayes.R
 ```
+# Requirements
+* dplyr package
+
+* tidytext package
+
+* tm package
+
+* e1071 package
+```
+install.packages(c("dplyr", "tidytext", "tm", "e1071"))
+```
 
 # Resources
 * [Text Mining with R](http://tidytextmining.com/tidytext.html)
