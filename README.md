@@ -6,7 +6,8 @@ than running in RStudio.
 ```
 Rscript naiveBayes.R
 ```
-# Requirements
+
+## Requirements
 * dplyr package
 
 * tidytext package
@@ -18,10 +19,11 @@ Rscript naiveBayes.R
 install.packages(c("dplyr", "tidytext", "tm", "e1071"))
 ```
 
-# Resources
+## Resources
+* [Kaggle info and submit](https://www.kaggle.com/c/msk-redefining-cancer-treatment)
 * [Text Mining with R](http://tidytextmining.com/tidytext.html)
 * [Text mining and machine learning in R](http://data-analytics.net/cep/Schedule_files/Textmining%20%20Clustering,%20Topic%20Modeling,%20and%20Classification.htm)
 
-# Next steps
+## Next steps
 * Ways of cleaning data
 * Making data meaningful i.e. any terms that associate particularly with cancer?
